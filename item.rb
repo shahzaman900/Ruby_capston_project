@@ -1,3 +1,5 @@
+require 'date'
+
 class Item
   attr_accessor :genre, :author, :source, :label, :published_date
 
@@ -25,5 +27,9 @@ class Item
   def label=(label)
     label.items << self unless label.items.include?(self)
     @label = label
+  end
+
+  def can_be_archived?
+    Date.today.year - Date.parse(@publish_date).year > 10
   end
 end
