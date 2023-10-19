@@ -10,6 +10,6 @@ class SaveMusic
     genres_json = genres.map do |genre|
       {'name' => genre.name}
     end
-    File.write(genres.json, genres_json)
+    File.write(genres.json, JSON.pretty_generate(genres_json))
   end
 end
