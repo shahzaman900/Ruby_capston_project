@@ -1,7 +1,6 @@
 require 'json'
 require_relative 'music_album'
 require_relative 'genre'
-require 'json'
 
 class LoadMusicAlbum
   def load_music_album(music_albums)
