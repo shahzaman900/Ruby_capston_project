@@ -8,3 +8,4 @@ class Book < Item
     @publisher = publisher
     @cover_state = cover_state
   end
+end
