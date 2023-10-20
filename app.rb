@@ -7,7 +7,6 @@ class App
   def initialize
     @music_albums = []
     @genres = []
-    p 'loading data ...'
     load_data
   end
 

@@ -9,7 +9,7 @@ class MusicAlbumApp
     date = gets.chomp
     print 'On spotify(y/n)?: '
     on_spotify = gets.chomp.downcase
-    on_spotify = on_spotify == 'y' ? true : false
+    on_spotify = on_spotify == 'y'
     new_album = MusicAlbum.new(date, on_spotify)
     new_genre = Genre.new(genre_name)
     music_albums << new_album
