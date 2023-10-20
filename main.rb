@@ -4,26 +4,30 @@ require_relative 'app'
 require_relative 'list_music_albums'
 require_relative 'music_album_app'
 
-# items = []
-
 class Main
   def initialize
     @app = App.new
   end
 
   def present_option
+    puts '1 - List all books'
     puts '2 - List all music albums'
-    puts '5 - List all genres'
-    puts '10 - Add a music album'
-    puts '13 - Exit App'
+    puts '3 - List of games'
+    puts '4 - List all genres'
+    puts '5 - List all labels'
+    puts '6 - List all authors'
+    puts '7 - Add a book'
+    puts '8 - Add a music album'
+    puts '9 - Add a game'
+    puts '10 - Exit App'
   end
 
   def choose_option(choice)
     options = {
       '2' => -> { ListMusicAlbums.new.list_music_album(@app.music_albums) },
-      '5' => -> { ListMusicAlbums.new.list_genres(@app.genres) },
-      '10' => -> { MusicAlbumApp.new.create_music_album(@app.music_albums, @app.genres) },
-      '13' => -> { exit_app }
+      '4' => -> { ListMusicAlbums.new.list_genres(@app.genres) },
+      '8' => -> { MusicAlbumApp.new.create_music_album(@app.music_albums, @app.genres) },
+      '10' => -> { exit_app }
     }
 
     if options.key?(choice)
@@ -48,4 +52,3 @@ class Main
 end
 
 Main.new.run
-
