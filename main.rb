@@ -29,7 +29,7 @@ class Main
     if options.key?(choice)
       options[choice].call
     else
-      puts "Invalid option"
+      puts 'Invalid option'
     end
   end
 
