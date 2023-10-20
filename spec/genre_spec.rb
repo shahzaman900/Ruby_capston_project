@@ -1,4 +1,3 @@
-
 require 'rspec'
 require './genre'
 require './music_album'
