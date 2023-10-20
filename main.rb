@@ -3,6 +3,10 @@ require 'date'
 require_relative 'app'
 require_relative 'list_music_albums'
 require_relative 'music_album_app'
+require_relative 'list_books'
+require_relative 'list_labels'
+require_relative 'book_app'
+require_relative 'book'
 
 # items = []
 
@@ -26,11 +30,11 @@ class Main
 
   def choose_option(choice)
     options = {
-      '1' => -> { ListBooks.new.list_books(@app.book) },
+      '1' => -> { ListBooks.new.list_books(@app.books) },
       '2' => -> { ListMusicAlbums.new.list_music_album(@app.music_albums) },
       '4' => -> { ListMusicAlbums.new.list_genres(@app.genres) },
       '5' => -> { ListLabels.new.list_labels(@app.label) },
-      '7' => -> { BookApp.new.add_book(@app.book_app) },
+      '7' => -> { BookApp.new.add_book(@app.books) },
       '8' => -> { MusicAlbumApp.new.create_music_album(@app.music_albums, @app.genres) },
       '10' => -> { exit_app }
     }

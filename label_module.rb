@@ -1,4 +1,4 @@
-require 'label'
+require_relative 'label'
 require 'json'
 require 'date'
 

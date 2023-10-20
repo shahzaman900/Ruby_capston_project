@@ -5,11 +5,13 @@ require_relative 'book_module'
 require_relative 'label_module'
 
 class App
-  attr_accessor :music_albums, :genres
+  attr_accessor :music_albums, :genres, :books
 
   def initialize
     @music_albums = []
     @genres = []
+    @books = []
+    @labels = []
     load_data
   end
 
@@ -20,8 +22,8 @@ class App
     save_music.save_genre(@genres)
 
     save_books = SaveLabels.new
-    save_books.save_labels(@label)
-    save_books.save_books(@book)
+    save_books.save_labels(@labels)
+    save_books.save_books(@books)
   end
 
   def load_data
@@ -30,9 +32,9 @@ class App
     load_music.load_generes(@genres)
 
     load_books = BooksDataController.new
-    load_books.load_books(@book)
+    @books = load_books.load_books
 
-    LabelsDataController.new
-    load_labels.load_labels(@label)
+    load_labels = LabelsDataController.new
+    @labels = load_labels.load_labels
   end
 end
