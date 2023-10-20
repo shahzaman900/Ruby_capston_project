@@ -12,7 +12,6 @@ RSpec.describe Book do
   describe '#can_be_archived?' do
     context "when cover_state is 'bad'" do
       let(:cover_state) { 'bad' }
-
       it 'returns true' do
         expect(subject.can_be_archived?).to be true
       end
