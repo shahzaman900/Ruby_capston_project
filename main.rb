@@ -16,8 +16,8 @@ class Main
     puts '2 - List all music albums'
     puts '3 - List of games'
     puts '4 - List all genres'
-    puts '5 - List all labels (e.g. 'Gift', 'New')'
-    puts '6 - List all authors (e.g. 'Stephen King''
+    puts '5 - List all labels'
+    puts '6 - List all authors'
     puts '7 - Add a book'
     puts '8 - Add a music album'
     puts '9 - Add a game'
@@ -26,8 +26,11 @@ class Main
 
   def choose_option(choice)
     options = {
+      '1' => -> { ListBooks.new.list_books(@app.book) },
       '2' => -> { ListMusicAlbums.new.list_music_album(@app.music_albums) },
       '4' => -> { ListMusicAlbums.new.list_genres(@app.genres) },
+      '5' => -> { ListLabels.new.list_labels(@app.label) },
+      '7' => -> { BookApp.new.add_book(@app.book_app) },
       '8' => -> { MusicAlbumApp.new.create_music_album(@app.music_albums, @app.genres) },
       '10' => -> { exit_app }
     }
