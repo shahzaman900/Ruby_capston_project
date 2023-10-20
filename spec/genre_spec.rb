@@ -7,7 +7,7 @@ describe Genre do
 
   context "#initialize" do
     it "initializes properly" do
-      expect(subject.name).to eql('pop')
+      expect(subject.name).to eq('pop')
     end
   end
 
