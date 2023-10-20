@@ -19,3 +19,4 @@ describe Genre do
       expect(music_album.genre).to eq(subject)
     end
   end
+end
