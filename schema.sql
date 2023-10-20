@@ -74,3 +74,8 @@ CREATE TABLE music_albums (
     FOREIGN_KEY (label_id)
     REFERENCES labels (id)
 )
+
+CREATE TABLE genres (
+  id INT GENERATED ALWAYS AS IDENTITY,
+  name VARCHAR(255) NOT NULL,
+)
