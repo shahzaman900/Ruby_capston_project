@@ -51,3 +51,26 @@ CREATE TABLE authors (
   last_name VARCHAR (255) NOT NULL,
   PRIMARY KEY (id)
 );
+
+CREATE TABLE music_albums (
+  id INT GENERATED ALWAYS AS IDENTITY,
+  genre_id INT NOT NULL,
+  author_id INT NOT NULL,
+  source_id INT NOT NULL,
+  label_id INT NOT NULL,
+  publish_date DATE,
+  archived BOOLEAN,
+  PRIMARY KEY (id)
+  CONSTRAINT fk_genre
+    FOREIGN_KEY (genre_id)
+    REFERENCES genres (id),
+  CONSTRAINT fk_author
+    FOREIGN_KEY (author_id)
+    REFERENCES authors (id),
+  CONSTRAINT fk_source
+    FOREIGN_KEY (source_id)
+    REFERENCES sources (id),
+  CONSTRAINT fk_label
+    FOREIGN_KEY (label_id)
+    REFERENCES labels (id)
+)
