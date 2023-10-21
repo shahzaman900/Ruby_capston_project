@@ -9,7 +9,7 @@ require_relative 'author_module'
 class App
   include GameModule
   include AuthorModule
-  attr_accessor :music_albums, :genres, :books, :games, :authors
+  attr_accessor :music_albums, :genres, :books, :games, :authors, :labels
 
   def initialize
     @music_albums = []
@@ -27,6 +27,10 @@ class App
 
   def list_authors
     list_present_authors
+  end
+
+  def list_all_games
+    list_games
   end
 
   def save_data

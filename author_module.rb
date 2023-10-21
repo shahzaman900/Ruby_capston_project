@@ -1,4 +1,4 @@
-require_relative 'auther'
+require_relative 'author'
 require 'json'
 
 module AuthorModule
@@ -28,7 +28,7 @@ module AuthorModule
     last_name = get_user_input('Last Name: ')
     author = Author.new(first_name, last_name)
 
-    File.open('data/authors.json', 'a') do |file|
+    File.open('authors.json', 'a') do |file|
       file.puts author.to_json
     end
 

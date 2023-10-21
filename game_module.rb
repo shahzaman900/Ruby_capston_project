@@ -31,13 +31,13 @@ module GameModule
     multiplayer = get_user_input('Multiplayer[Y/N]: ').casecmp('Y').zero?
     last_played_at = get_user_input('Last played(yyyy-mm-dd): ')
     publish_date = get_user_input('Game publish date(yyyy-mm-dd): ')
-    label = create_label
-    genre = creating_genre
+    # label = create_label
+    # genre = creating_genre
     author = add_author
 
     game = Game.new(multiplayer, last_played_at, publish_date)
-    game.label = label
-    game.genre = genre
+    # game.label = label
+    # game.genre = genre
     game.author = author
 
     File.open('games.json', 'a') do |file|
