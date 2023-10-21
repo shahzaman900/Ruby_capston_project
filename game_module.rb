@@ -1,7 +1,7 @@
 require_relative 'game'
 require_relative 'author_module'
 require_relative 'label_module'
-require_relative 'genre_module'
+# require_relative 'genre_module'
 require 'json'
 
 module GameModule
@@ -40,7 +40,7 @@ module GameModule
     game.genre = genre
     game.author = author
 
-    File.open('data/games.json', 'a') do |file|
+    File.open('games.json', 'a') do |file|
       file.puts game.to_json
     end
     puts 'Game Added Successfully!'

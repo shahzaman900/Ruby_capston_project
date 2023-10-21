@@ -3,21 +3,34 @@ require_relative 'load_music_album'
 require_relative 'save_books'
 require_relative 'book_module'
 require_relative 'label_module'
+require_relative 'game_module'
+require_relative 'author_module'
 
 class App
-  attr_accessor :music_albums, :genres, :books
+  include GameModule
+  include AuthorModule
+  attr_accessor :music_albums, :genres, :books, :games, :authors
 
   def initialize
     @music_albums = []
     @genres = []
     @books = []
     @labels = []
+    @games = []
+    @authors = []
     load_data
+  end
+
+  def add_game
+    create_game
+  end
+
+  def list_authors
+    list_present_authors
   end
 
   def save_data
     save_music = SaveMusic.new
-
     save_music.save_music_album(@music_albums)
     save_music.save_genre(@genres)
 

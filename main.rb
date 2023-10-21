@@ -7,6 +7,8 @@ require_relative 'list_books'
 require_relative 'list_labels'
 require_relative 'book_app'
 require_relative 'book'
+require_relative 'game'
+require_relative 'game_module'
 
 # items = []
 
@@ -32,13 +34,13 @@ class Main
     options = {
       '1' => -> { ListBooks.new.list_books(@app.books) },
       '2' => -> { ListMusicAlbums.new.list_music_album(@app.music_albums) },
-      '3' => -> {  },
+      '3' => -> { @app.list_all_games },
       '4' => -> { ListMusicAlbums.new.list_genres(@app.genres) },
       '5' => -> { ListLabels.new.list_labels(@app.label) },
-      '6' => -> {  },
+      '6' => -> { @app.list_authors },
       '7' => -> { BookApp.new.add_book(@app.books) },
       '8' => -> { MusicAlbumApp.new.create_music_album(@app.music_albums, @app.genres) },
-      '9' => -> {  },
+      '9' => -> { @app.add_book },
       '10' => -> { exit_app }
     }
 
