@@ -1,4 +1,4 @@
-require_relative 'auther'
+require './author'
 require 'rspec'
 
 describe Author do

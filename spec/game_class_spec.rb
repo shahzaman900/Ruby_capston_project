@@ -1,6 +1,6 @@
 require 'rspec'
-require_relative 'item'
-require_relative 'game'
+require './item'
+require './game'
 
 describe Game do
   let(:game) { Game.new(true, '2019-10-17', '2022-10-17') }
