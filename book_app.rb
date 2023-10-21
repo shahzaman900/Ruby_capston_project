@@ -4,7 +4,7 @@ require_relative 'label_module'
 class BookApp
   def add_book(books, labels)
     print 'Please, type the book name: '
-    name = gets.chomp
+    gets.chomp
 
     print 'Please, type the book publisher: '
     publisher = gets.chomp
