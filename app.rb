@@ -51,7 +51,7 @@ class App
     load_books = BooksDataController.new
     @books = load_books.load_books
 
-    load_labels = LabelsDataController.new
-    @labels = load_labels.load_labels
+    new_label = LabelsDataController.new
+    @labels = new_label.load_labels
   end
 end

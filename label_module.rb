@@ -8,7 +8,7 @@ class LabelsDataController
     data = []
     if File.exist?(file) && !File.empty?(file)
       JSON.parse(File.read(file)).each do |element|
-        data.push(Label.new(id: element['id'].to_i, title: element['title'], color: element['color']))
+        data.push(Label.new(element['title'], element['color']))
       end
     end
     data
